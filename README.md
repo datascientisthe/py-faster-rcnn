@@ -11,7 +11,7 @@ To try the optimized performance,
   git clone -b uvm --recursive  https://github.com/ibmsoe/py-faster-rcnn.git $FRCN_ROOT
   ```
 
-2. By following steps in the below origina README for installation and demo
+2. By following steps in the below original README for installation and demo
 
 3. To enlarge the input size to try large model support, edit "$FRCN_ROOT/lib/fast_rcnn/config.py"
 
