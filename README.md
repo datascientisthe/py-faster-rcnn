@@ -1,3 +1,30 @@
+This is a version of Faster R-CNN code with UVM support added along with some performance optimizations.
+
+The optimizations may focus 2 aspects:
+ - Use prefectch cuda API: cudaMemPrefetchAsync() to reduce the page-fault rate.
+ - Use 'col_buf' sharing patch from [here](https://github.com/BVLC/caffe/pull/2016)
+
+To try the optimized performance,
+1. Clone this patched Faster R-CNN repository
+  ```Shell
+  # Make sure to clone with --recursive and checkout branch 'uvm'
+  git clone -b uvm --recursive  https://github.com/ibmsoe/py-faster-rcnn.git $FRCN_ROOT
+  ```
+
+2. By following steps in the below origina README for installation and demo
+
+3. To enlarge the input size to try large model support, edit "$FRCN_ROOT/lib/fast_rcnn/config.py"
+
+  Updates below 2 configure parameters:
+   ```Shell
+   __C.TEST.SCALES = (1700,)
+   __C.TEST.MAX_SIZE = 2092
+   ```
+
+<br><br><br><br><br>
+
+======= README from the original repo =======
+
 ### Disclaimer
 
 The official Faster R-CNN code (written in MATLAB) is available [here](https://github.com/ShaoqingRen/faster_rcnn).
