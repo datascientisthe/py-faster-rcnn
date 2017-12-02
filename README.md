@@ -1,4 +1,4 @@
-This is a version of Faster R-CNN code with UVM support added along with some performance optimizations.
+This is a version of Faster R-CNN code with UVM support added along with some performance optimizations. NVIDIA GPU with Pascal or newer architecture is required.
 
 The optimizations may focus 2 aspects:
  - Use prefectch cuda API: cudaMemPrefetchAsync() to reduce the page-fault rate.
